@@ -1,0 +1,31 @@
+{
+  "name": "twizted-metal",
+  "version": "1.0.0",
+  "description": "Twizted Metal cross-chain DEX: Optimism + Solana",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests yet\" && exit 1"
+  },
+  "keywords": [
+    "defi",
+    "dex",
+    "optimism",
+    "solana",
+    "layerzero",
+    "chainlink"
+  ],
+  "author": "Twizted Metal",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.0",
+    "@chainlink/contracts": "^0.6.1",
+    "ethers": "^5.7.2"
+  },
+  "devDependencies": {
+    "hardhat": "^2.22.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.2",
+    "hardhat-sourcify": "^2.6.0",
+    "hardhat-iard-analyzer": "^2.0.1",
+    "hardhat-solidity-scan": "^1.0.0"
+  }
+}
