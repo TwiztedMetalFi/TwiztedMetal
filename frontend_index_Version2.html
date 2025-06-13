@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Twizted Metal DEX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/ethers/dist/ethers.umd.min.js"></script>
+    <script src="https://unpkg.com/@rainbow-me/rainbowkit"></script>
+  </head>
+  <body class="bg-gray-900 text-white min-h-screen">
+    <div class="container mx-auto p-6">
+      <h1 class="text-4xl font-bold mb-4">Twizted Metal DEX</h1>
+      <div id="app" class="space-y-8">
+        <!-- Token Management -->
+        <div class="bg-gray-800 rounded p-4">
+          <h2 class="text-xl font-semibold mb-2">SuperToken Management</h2>
+          <button id="mintBtn" class="bg-blue-600 px-4 py-2 rounded">Mint</button>
+          <button id="burnBtn" class="bg-red-600 px-4 py-2 rounded">Burn</button>
+        </div>
+        <!-- Swap -->
+        <div class="bg-gray-800 rounded p-4">
+          <h2 class="text-xl font-semibold mb-2">Swap SuperToken for ETH</h2>
+          <input id="swapAmount" type="number" class="text-black px-2 py-1 rounded" placeholder="Amount" />
+          <button id="swapBtn" class="bg-green-600 px-4 py-2 rounded">Swap</button>
+        </div>
+        <!-- Bridge -->
+        <div class="bg-gray-800 rounded p-4">
+          <h2 class="text-xl font-semibold mb-2">Bridge SuperToken to Solana</h2>
+          <input id="bridgeAmount" type="number" class="text-black px-2 py-1 rounded" placeholder="Amount" />
+          <button id="bridgeBtn" class="bg-purple-600 px-4 py-2 rounded">Bridge</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const superTokenAddress = "0x...SuperTokenAddress";
+      const poolFactoryAddress = "0x...PoolFactoryAddress";
+      const bridgeAdapterAddress = "0x...BridgeAdapterAddress";
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+      async function connect() {
+        await provider.send("eth_requestAccounts", []);
+        const signer = provider.getSigner();
+
+        // Load contracts here using ethers.Contract
+        // Set up Mint, Burn, Swap, and Bridge button listeners
+        // (Omitted for brevity, insert contract ABIs and logic here)
+      }
+
+      window.onload = connect;
+    </script>
+  </body>
+</html>
